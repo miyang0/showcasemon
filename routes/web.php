@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ShowcaseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Showcase;
@@ -37,12 +38,14 @@ Route::get('showcasedex', function () {
 
 })->name('showcase.index');
 
-Route::post('showcase-create', function (Request $request) {
+//Route::post('showcase-create', function (Request $request) {
+//
+//    $request->input('showcase');
+//    ShowcaseController::store($request);
+//
+//    return redirect('showcasedex');
+//})
 
-    $request->input('showcase');
-    \App\Http\Controllers\ShowcaseController::store($request);
-
-    return redirect('showcasedex');
-});
+Route::resource('showcase-create', ShowcaseController::class);
 
 require __DIR__ . '/auth.php';

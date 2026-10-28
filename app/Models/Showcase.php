@@ -10,10 +10,10 @@ class Showcase extends Model
 {
     protected $fillable = ['title', 'description'];
 
-//    public function reviews(): HasMany
-//    {
-//        return $this->hasMany(Review::class);
-//    }
+    public function tags(): HasMany
+    {
+        return $this->hasMany(Tag::class);
+    }
 
     public function user(): BelongsTo
     {
