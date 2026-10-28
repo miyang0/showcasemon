@@ -15,6 +15,7 @@ return new class extends Migration {
 //            $table->foreignIdFor(\App\Models\Showcase::class)->constrained();
             $table->string('title', 100);
             $table->text('description');
+            $table->binary('image')->nullable();
             $table->timestamps();
         });
     }
